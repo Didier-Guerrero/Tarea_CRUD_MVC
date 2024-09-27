@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarea MVC CRUD</title>
+  </head>
+  <body>
+    <h1>Tarea MVC CRUD</h1>
+    <form action="/add" method="POST">
+      <input type="text" name="name" placeholder="Nombre del item" required />
+      <input
+        type="text"
+        name="description"
+        placeholder="Descripcion"
+        required
+      />
+      <button type="submit">Añadir item</button>
+    </form>
+    <ul>
+      <% items.forEach(item => { %>
+      <li>
+        <%= item.name %> - <%= item.description %>
+        <form
+          action="/update/<%= item.id %>"
+          method="POST"
+          style="display: inline"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Actualizar nombre"
+            required
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Actualizar descripcion"
+            required
+          />
+          <button type="submit">Actualizar</button>
+        </form>
+        <a href="/delete/<%= item.id %>">Eliminar</a>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
