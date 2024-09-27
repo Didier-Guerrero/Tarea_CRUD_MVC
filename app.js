@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const sequelize = require("./config/database");
+const itemRoutes = require("./routes/itemRoutes");
 
 const app = express();
 
@@ -12,6 +13,9 @@ sequelize
   .sync({ force: false })
   .then(() => console.log("Database synced"))
   .catch((err) => console.log(err));
+
+// Enrutamiento
+app.use("/", itemRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
