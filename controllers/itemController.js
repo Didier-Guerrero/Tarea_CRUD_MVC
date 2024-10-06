@@ -2,8 +2,12 @@ const Item = require("../models/itemModel");
 
 // Visualizar los items
 exports.getItems = async (req, res) => {
-  const items = await Item.findAll();
-  res.render("index", { items });
+  try {
+    const items = await Item.findAll();
+    res.render("index", { items });
+  } catch (error) {
+    res.status(500).send("Error al obtener los ítems");
+  }
 };
 
 // Creacion de item
