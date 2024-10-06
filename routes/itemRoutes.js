@@ -1,17 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const itemController = require("../controllers/itemController");
+const { isAuthenticated } = require("../middleware/authMiddleware");
 
-// Visualizacion de items
-router.get("/", itemController.getItems);
-
-// Creacion de items
-router.post("/add", itemController.createItem);
-
-// Actualizacion de items
-router.post("/update/:id", itemController.updateItem);
-
-// Eliminacion de items
-router.get("/delete/:id", itemController.deleteItem);
+// Visualizar ítems
+router.get("/", isAuthenticated, itemController.getItems);
+// Creacion ítem
+router.post("/add", isAuthenticated, itemController.createItem);
+// Actualizacion ítem
+router.post("/update/:id", isAuthenticated, itemController.updateItem);
+// Eliminacion ítem
+router.get("/delete/:id", isAuthenticated, itemController.deleteItem);
 
 module.exports = router;
