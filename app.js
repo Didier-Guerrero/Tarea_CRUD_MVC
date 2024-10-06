@@ -12,6 +12,15 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(
+  session({
+    secret: "mySecretKey",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false },
+  })
+);
+
 // Sincronizacion de la base de datos
 sequelize
   .sync({ force: false })
@@ -21,15 +30,6 @@ sequelize
 // Enrutamiento
 app.use("/", itemRoutes);
 app.use("/", authRoutes);
-
-app.use(
-  session({
-    secret: "mySecretKey",
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false },
-  })
-);
 
 const PORT = 3000;
 app.listen(PORT, () => {
