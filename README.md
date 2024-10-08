@@ -1,14 +1,26 @@
 Aplicación CRUD con Autenticación
+
+
 Tabla de Contenidos
+
 Introducción
+
 Características
+
 Tecnologías Utilizadas
+
 Instalación
+
 Uso
+
 Estructura del Proyecto
+
 Contribuciones
+
 Licencia
+
 Introducción
+
 Esta es una aplicación simple de CRUD (Crear, Leer, Actualizar, Eliminar) construida con Node.js, Express, Sequelize y SQLite, que incluye funcionalidad de autenticación. La aplicación permite a los usuarios registrarse, iniciar sesión y gestionar ítems (añadir, actualizar, eliminar). Solo los usuarios autenticados pueden acceder a la lista de ítems y realizar operaciones CRUD.
 
 Características
@@ -31,17 +43,17 @@ Instalación
 Requisitos Previos
 Node.js: Asegúrate de tener Node.js instalado en tu máquina. Puedes descargarlo aquí.
 npm: El gestor de paquetes de Node.js, que viene con Node.js.
+
 Pasos
+
 Clona el repositorio:
 
-bash
-Copy code
-git clone https://github.com/tuusuario/tu-repositorio.git
-cd tu-repositorio
+git clone [https://github.com/tuusuario/tu-repositorio.git](https://github.com/Didier-Guerrero/Tarea_CRUD_MVC.git)
+
+cd ../Tarea_CRUD_MVC
+
 Instala las dependencias:
 
-bash
-Copy code
 npm install
 Configura la base de datos:
 
@@ -49,16 +61,21 @@ El proyecto utiliza SQLite como base de datos. No es necesario configurar nada m
 
 Inicia la aplicación:
 
-bash
-Copy code
+
 node app.js
 El servidor estará corriendo en http://localhost:3000.
 
 Uso
 Registro: Visita http://localhost:3000/register para crear un nuevo usuario.
+
 Iniciar Sesión: Una vez registrado, inicia sesión en http://localhost:3000/login para acceder a la app.
+
 Gestión de Ítems: Después de iniciar sesión, puedes ver, añadir, actualizar o eliminar ítems.
+
 Ejemplo:
+
 Registrar un usuario: admin@example.com con la contraseña admin123.
+
 Iniciar Sesión: Usa las mismas credenciales para iniciar sesión.
+    
 Gestionar Ítems: Puedes añadir ítems como "Ítem 1" e "Ítem 2", actualizar sus descripciones y eliminarlos.
