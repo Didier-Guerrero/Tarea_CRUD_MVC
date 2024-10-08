@@ -48,7 +48,7 @@ Pasos
 
 Clona el repositorio:
 
-git clone [https://github.com/tuusuario/tu-repositorio.git](https://github.com/Didier-Guerrero/Tarea_CRUD_MVC.git)
+git clone https://github.com/Didier-Guerrero/Tarea_CRUD_MVC.git
 
 cd ../Tarea_CRUD_MVC
 
